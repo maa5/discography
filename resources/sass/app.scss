@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+.navbar-custom {
+    padding: 20px 30px;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+
+    li {
+        a {
+            &:hover {
+                color: black !important;
+            }
+
+            &.active {
+                color: black !important;
+            }
+        }
+    }
+}
+
+body {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.colored-toast {
+    &.swal2-icon-success {
+        background-color: #a5dc86 !important;
+    }
+
+    &.swal2-icon-error {
+        background-color: #f27474 !important;
+    }
+
+    &.swal2-icon-warning {
+        background-color: #f8bb86 !important;
+    }
+
+    &.swal2-icon-info {
+        background-color: #3fc3ee !important;
+    }
+
+    &.swal2-icon-question {
+        background-color: #87adbd !important;
+    }
+
+    .swal2-title {
+        color: white;
+    }
+
+    .swal2-close {
+        color: white;
+    }
+
+    .swal2-html-container {
+        color: white;
+    }
+}
+
+.content {
+    margin: 50px;
+    padding: 30px;
+    height: 100%;
+
+    h1 {
+        color: white;
+        text-align: center;
+    }
+
+    .container-home {
+        width: 70%;
+        margin: 0 auto;
+
+        .list-options-home {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 60px 0px;
+            gap: 40px;
+
+            a {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                padding: 10px;
+                text-decoration: none;
+
+                .card {
+                    flex-grow: 1;
+                    min-height: 400px;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-color: transparent;
+                    border-radius: 10px;
+                    background-color: rgb(0, 0, 0, 0.6);
+                    background-blend-mode: overlay;
+
+                    .card-body {
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        h3 {
+                            color: white;
+                        }
+                    }
+                }
+
+                &:hover {
+                    .card {
+                        transform: scale(1.2);
+                        transition: transform 0.3s ease;
+                        z-index: 9;
+                    }
+                }
+            }
+        }
+    }
+
+    .container-table {
+        position: relative;
+
+        .filter-form-table {
+            float: right;
+            margin: 35px 40px 0px 0px;
+        }
+
+        .dt-container {
+            background-color: white;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        }
+
+        table {
+            thead {
+                tr {
+                    th {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        div.dataTables_wrapper div.dataTables_filter {
+            display: none;
+        }
+    }
+
+    .container-artist,
+    .container-album {
+        width: 70%;
+        margin: 0 auto;
+        background-color: white;
+        padding: 50px;
+        border-radius: 10px;
+
+        a {
+            display: inline-block;
+            padding-bottom: 40px;
+            text-decoration: none;
+            color: #6608D0;
+
+            &:hover {
+                opacity: .7;
+            }
+        }
+    }
+
+    .container-album {
+        .head-lp {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .description-lp {
+            margin-bottom: 20px;
+        }
+
+        .list-songs-lp {
+            strong {
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .container-artist {
+        .head-artist {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .description-artist {
+            margin-bottom: 20px;
+        }
+    }
+
+    .container-lps-artist {
+        .list-lps-artist {
+            margin-top: 50px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+
+            .lp-card {
+                flex: 1;
+                background-color: white;
+                border-radius: 10px;
+                padding: 20px;
+                -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+                -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+                box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+            }
+        }
+    }
+}

@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\DatatableController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LPController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/report', [ReportController::class, 'index'])->name('report.index');
+
+Route::resource('artists', ArtistController::class);
+Route::get('artists/{slug}/lps', [ArtistController::class, 'lps'])->name('artists.lps');
+
+Route::resource('lps', LPController::class);
+
+Route::get('datatable/lps', [DatatableController::class, 'lp'])->name('datatable.lp');
+Route::get('datatable/artists', [DatatableController::class, 'artist'])->name('datatable.artist');
