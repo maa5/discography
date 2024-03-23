@@ -85,7 +85,7 @@ export default (function () {
             modal.find('input[name="lp"]').val(data.id);
             modal.find('input[name="name"]').val(data.name);
             modal.find('textarea[name="description"]').val(data.description);
-            modal.find('select[name="artist"]').val(data.artist_id);
+            modal.find('select[name="artist_id"]').val(data.artist_id);
 
             modal.modal('show');
         });
@@ -194,7 +194,7 @@ export default (function () {
             modal.find('input[name="lp"]').val("");
             modal.find('input[name="name"]').val("");
             modal.find('textarea[name="description"]').val("");
-            modal.find('select[name="artist"]').val("");
+            modal.find('select[name="artist_id"]').val("");
         });
     }
 

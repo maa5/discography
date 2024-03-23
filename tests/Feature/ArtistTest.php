@@ -17,7 +17,7 @@ class ArtistTest extends TestCase
     /**
      * Test if model artist exists in database
      */
-    public function test_artist_model_exist_in_database()
+    public function test_artist_model_exist_in_database(): void
     {
         $artist = Artist::factory()->create();
 
@@ -27,7 +27,7 @@ class ArtistTest extends TestCase
     /**
      * Test returns a view with a list of artists
      */
-    public function test_returns_view_with_artists()
+    public function test_returns_view_with_artists(): void
     {
         $artists = Artist::factory(5)->create();
 
@@ -41,10 +41,10 @@ class ArtistTest extends TestCase
     /**
      * Test returns a view an artist with their lps
      */
-    public function test_returns_view_with_artist_lps()
+    public function test_returns_view_with_artist_lps(): void
     {
-        Artist::factory()->has(LP::factory(2))->create();
-        $artist = Artist::first();
+        $artist = Artist::factory()->create();
+        LP::factory()->create(['artist_id' => $artist->id]);
 
         $response = $this->get(route('artists.lps', ['slug' => $artist->slug]));
 
@@ -57,7 +57,7 @@ class ArtistTest extends TestCase
     /**
      * Test creates new artist
      */
-    public function test_creates_new_artist()
+    public function test_creates_new_artist(): void
     {
         $name = 'Test Artist';
 
@@ -76,7 +76,7 @@ class ArtistTest extends TestCase
     /**
      * Test returns view with specific artist
      */
-    public function test_returns_view_with_artist()
+    public function test_returns_view_with_artist(): void
     {
         $artist = Artist::factory()->create();
 
@@ -90,12 +90,12 @@ class ArtistTest extends TestCase
     /**
      * Test updates existing artist
      */
-    public function test_updates_artist()
+    public function test_updates_artist(): void
     {
         $artist = Artist::factory()->create();
         $newData = [
             'name' => 'Updated Artist Name',
-            'description' => 'Updated Description',
+            'description' => 'Updated Artist Description',
         ];
 
         $response = $this->put(route('artists.update', $artist->id), $newData);
@@ -107,7 +107,7 @@ class ArtistTest extends TestCase
     /**
      * Test delete existing artist
      */
-    public function test_deletes_artist()
+    public function test_deletes_artist(): void
     {
         $artist = Artist::factory()->create();
 

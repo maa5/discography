@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                         <label for="artist">Artist</label>
-                        <select class="form-control" name="artist" id="artist">
+                        <select class="form-control" name="artist_id" id="artist">
                             <option value="">Select an artist</option>
                             @foreach ($artists as $artist)
                                 <option value="{{ $artist->id }}">{{ $artist->name }}</option>

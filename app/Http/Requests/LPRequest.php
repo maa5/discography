@@ -24,7 +24,7 @@ class LPRequest extends FormRequest
         return [
             'name' => 'required|max:255',
             'description' => 'required',
-            'artist' => 'required'
+            'artist_id' => 'required'
         ];
     }
 }

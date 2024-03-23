@@ -16,21 +16,17 @@ class ReportController extends Controller
     {
         $listLPS = LP::all();
 
-        $lps = [];
+        $lps = LP::with(['artist', 'songs.authors'])->get()->map(function ($lp) {
+            $authors = $lp->songs->flatMap->authors->pluck('name')->implode(', ');
 
-        foreach ($listLPS as $lp) {
-            $authors = $lp->songs->flatMap(function ($song) {
-                return $song->authors->pluck('name');
-            })->implode(', ');
-
-            $lps[] = [
+            return [
                 'id_lp' => $lp->id,
                 'lp_name' => $lp->name,
                 'artist_name' => $lp->artist->name,
                 'num_songs' => $lp->songs->count(),
                 'list_authros' => $authors
             ];
-        }
+        });
 
         return view('pages.report.index', compact('lps'));
     }

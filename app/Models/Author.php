@@ -10,7 +10,7 @@ class Author extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['slug', 'name'];
 
     public function songs(): BelongsToMany
     {

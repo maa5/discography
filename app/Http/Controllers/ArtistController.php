@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ArtistRequest;
 use App\Models\Artist;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Str;
 
 class ArtistController extends Controller
@@ -12,13 +13,13 @@ class ArtistController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
         $artists = Artist::all();
         return view('pages.artists.index', compact('artists'));
     }
 
-    public function lps($slug)
+    public function lps($slug): View
     {
         $artist = Artist::where('slug', $slug)->firstOrFail();
         $artist_name = $artist->name;
@@ -29,7 +30,7 @@ class ArtistController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ArtistRequest $request)
+    public function store(ArtistRequest $request): JsonResponse
     {
         $artist = new Artist();
         $artist->slug = Str::slug($request->input('name'));
@@ -52,7 +53,7 @@ class ArtistController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(ArtistRequest $request, string $id)
+    public function update(ArtistRequest $request, string $id): JsonResponse
     {
         $artist = Artist::find($id);
         $artist->name = $request->name;
@@ -65,7 +66,7 @@ class ArtistController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id): JsonResponse
     {
         $artist = Artist::find($id);
         $artist->delete();

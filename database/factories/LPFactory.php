@@ -22,7 +22,7 @@ class LPFactory extends Factory
         return [
             'slug' => Str::slug($name),
             'name' => $name,
-            'description' => fake()->text()
+            'description' => fake()->realText()
         ];
     }
 }

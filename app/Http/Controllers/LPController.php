@@ -6,6 +6,7 @@ use App\Http\Requests\LPRequest;
 use App\Models\Artist;
 use App\Models\LP;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Str;
 
 class LPController extends Controller
@@ -13,7 +14,7 @@ class LPController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
         $artists = Artist::all();
         return view('pages.lps.index', compact('artists'));
@@ -22,13 +23,13 @@ class LPController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(LPRequest $request)
+    public function store(LPRequest $request): JsonResponse
     {
         $lp = new LP();
-        $lp->slug = Str::slug($request->name);
-        $lp->name = $request->name;
-        $lp->description = $request->description;
-        $lp->artist_id = $request->artist;
+        $lp->slug = Str::slug($request->input('name'));
+        $lp->name = $request->input('name');
+        $lp->description = $request->input('description');
+        $lp->artist_id = $request->input('artist_id');
         $lp->save();
 
         return response()->json(['message' => 'LP created successfully.']);
@@ -46,12 +47,12 @@ class LPController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(LPRequest $request, string $id)
+    public function update(LPRequest $request, string $id): JsonResponse
     {
         $lp = LP::find($id);
-        $lp->name = $request->name;
-        $lp->description = $request->description;
-        $lp->artist_id = $request->artist;
+        $lp->name = $request->input('name');
+        $lp->description = $request->input('description');
+        $lp->artist_id = $request->input('artist_id');
         $lp->save();
 
         return response()->json(['message' => 'LP updated successfully.']);
@@ -60,7 +61,7 @@ class LPController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id): JsonResponse
     {
         $lp = LP::find($id);
         $lp->delete();

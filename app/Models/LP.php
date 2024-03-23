@@ -11,7 +11,7 @@ class LP extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['artist_id', 'name', 'description'];
+    protected $fillable = ['slug', 'artist_id', 'name', 'description'];
 
     public function artist(): BelongsTo
     {
