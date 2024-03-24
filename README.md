@@ -150,3 +150,7 @@ In the tests directory, you will find the tests to verify the application.
 - [Composer](https://getcomposer.org/)
 - [Vite](https://es.vitejs.dev/)
 - [Sass](https://sass-lang.com/)
+
+## Author
+
+**Mohamed Aziz** - [Github](https://github.com/maa5)
