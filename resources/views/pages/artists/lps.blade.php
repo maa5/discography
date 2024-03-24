@@ -3,8 +3,10 @@
 @section('title', $artist_name)
 
 @section('content')
+    <h1>LPs by {{ $artist_name }}</h1>
+    
     <div class="container-lps-artist">
-        <h1>LPs by {{ $artist_name }}</h1>
+        <a href="{{ route('artists.show', $artist_slug) }}"><i class="fas fa-chevron-left"></i> Back to Artist</a>
         <div class="list-lps-artist">
             @if ($lps->isEmpty())
                 <p>No LPs found for this artist.</p>

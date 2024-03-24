@@ -133,6 +133,7 @@ body {
 
     .container-table {
         position: relative;
+        margin-top: 50px;
 
         .filter-form-table {
             float: right;
@@ -184,6 +185,8 @@ body {
     }
 
     .container-album {
+        margin-top: 50px;
+
         .head-lp {
             display: flex;
             align-items: center;
@@ -205,6 +208,8 @@ body {
     }
 
     .container-artist {
+        margin-top: 50px;
+
         .head-artist {
             display: flex;
             align-items: center;
@@ -219,6 +224,8 @@ body {
     }
 
     .container-lps-artist {
+        margin-top: 50px;
+
         .list-lps-artist {
             display: grid;
             grid-template-columns: repeat(3, minmax(200px, 1fr));

@@ -22,9 +22,10 @@ class ArtistController extends Controller
     public function lps($slug): View
     {
         $artist = Artist::where('slug', $slug)->firstOrFail();
+        $artist_slug = $artist->slug;
         $artist_name = $artist->name;
         $lps = $artist->lps;
-        return view('pages.artists.lps', compact('artist_name', 'lps'));
+        return view('pages.artists.lps', compact('artist_slug', 'artist_name', 'lps'));
     }
 
     /**

@@ -3,8 +3,9 @@
 @section('title', 'Report')
 
 @section('content')
+    <h1>Report</h1>
+
     <div class="container-table">
-        <h1>Report</h1>
         <table id="reportTable" class="table datatable">
             <thead>
                 <tr>
@@ -20,7 +21,7 @@
                         <td>{{ $lp['lp_name'] }}</td>
                         <td>{{ $lp['artist_name'] }}</td>
                         <td style="text-align: center;">{{ $lp['num_songs'] }}</td>
-                        <td>{{ $lp['list_authros'] }}</td>
+                        <td>{{ $lp['list_authors'] }}</td>
                     </tr>
                 @endforeach
             </tbody>

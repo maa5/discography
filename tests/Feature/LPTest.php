@@ -40,7 +40,7 @@ class LPTest extends TestCase
     }
 
     /**
-     * Test creates new LP
+     * Test creates new lp
      */
     public function test_creates_new_lp(): void
     {

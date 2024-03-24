@@ -24,7 +24,7 @@ class ReportController extends Controller
                 'lp_name' => $lp->name,
                 'artist_name' => $lp->artist->name,
                 'num_songs' => $lp->songs->count(),
-                'list_authros' => $authors
+                'list_authors' => $authors
             ];
         });
 

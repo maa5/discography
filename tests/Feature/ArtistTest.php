@@ -50,6 +50,7 @@ class ArtistTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertViewIs('pages.artists.lps');
+        $response->assertViewHas('artist_slug', $artist->slug);
         $response->assertViewHas('artist_name', $artist->name);
         $response->assertViewHas('lps', $artist->lps);
     }

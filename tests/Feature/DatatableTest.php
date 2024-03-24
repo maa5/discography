@@ -12,6 +12,9 @@ class DatatableTest extends TestCase
 {
     use RefreshDatabase;
 
+    /**
+     *  Test returns correct json for LP datatable
+     */
     public function test_lp_returns_correct_json()
     {
         $artist = Artist::factory()->create();
@@ -49,6 +52,9 @@ class DatatableTest extends TestCase
         ]);
     }
 
+    /**
+     *  Test returns correct json for Artist datatable
+     */
     public function test_artist_returns_correct_json()
     {
         $artist1 = Artist::factory()->create();

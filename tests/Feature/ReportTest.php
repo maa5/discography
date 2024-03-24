@@ -13,7 +13,7 @@ use Tests\TestCase;
 class ReportTest extends TestCase
 {
     use RefreshDatabase;
-    
+
     public function test_returns_view_with_report_data(): void
     {
         // Create LPs with associated artists and songs

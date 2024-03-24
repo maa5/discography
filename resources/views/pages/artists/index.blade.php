@@ -3,8 +3,9 @@
 @section('title', 'Artists')
 
 @section('content')
+    <h1>Artists</h1>
+    
     <div class="container-table">
-        <h1>Artists</h1>
         <table id="artistsTable" class="table datatable">
             <thead>
                 <tr>

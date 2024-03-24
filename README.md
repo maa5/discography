@@ -16,6 +16,12 @@ For the list of artists and LPs, AJAX requests are used to perform add, edit, an
 
 ## Database diagram
 
+- Models: Artist, LP, Song, Author
+- Associations:
+  * Artist and LP is one to many, one Artist has many LPs, and one LP belongs to one Artist.
+  * One LP has many songs.
+  * One song belongs to many Authors and one Author has many Songs.
+
 ![Database diagram](diagram-db-discography.png)
 
 ## Getting Started
@@ -101,7 +107,7 @@ In the tests directory, you will find the tests to verify the application.
     cp .env .env.testing.
     ```
 
-3. Modify the `.env.testing` file with your desired local environment configuration options. After the testing database has been created, set your environment variables to point to this database by placing the absolute path to the database in the `DB_DATABASE` environment variable:
+3. Modify the `.env.testing` file with your desired local environment configuration options. After the testing database has been created, set your environment variables to point to this testing database by placing the absolute path to the database in the `DB_DATABASE` environment variable:
 
     ```
     DB_CONNECTION=sqlite
