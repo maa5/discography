@@ -3,8 +3,9 @@
 @section('title', $lp->name)
 
 @section('content')
+    <a class="link-back" href="{{ route('lps.index') }}"><i class="fas fa-chevron-left"></i> Back to LPs</a>
+
     <div class='container-album'>
-        <a href="{{ route('lps.index') }}"><i class="fas fa-chevron-left"></i> Back to LPs</a>
         <div class='head-lp'>
             <h2>LP: {{ $lp->name }}</h2>
             <strong>Artist: {{ $lp->artist->name }}</strong>

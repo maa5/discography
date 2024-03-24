@@ -38,7 +38,7 @@ These instructions will help you get a copy of the project up and running on you
 
 ### Installation
 
-1. Clone this repo into your directory:
+1. Clone this repository into your directory:
 
     ````
     git clone https://github.com/maa5/discography.git
@@ -50,50 +50,64 @@ These instructions will help you get a copy of the project up and running on you
     cd <your path>
     ````
 
-3. SQLite Configuration: Create a new SQLite database: create file `database.sqlite` into `database` directory.
+3. Run composer for install dependencies:
 
-4. Create the `.env` file by copying from the example provided (`.env.example`):
+    ````
+    composer install
+    ````
+
+4. Run npm for install dependencies:
+
+    ````
+    npm install
+    ````
+
+5. SQLite Configuration: Create a new SQLite database: create file `database.sqlite` into `database` directory.
+
+6. Create the `.env` file by copying from the example provided (`.env.example`):
 
     ```
     cp .env.example .env
     ```
 
-5. Create your Encryption Key. (This generate `APP_KEY` value in `.env` file):
+7. Create your Encryption Key. (This generate `APP_KEY` value in `.env` file):
 
     ```
     php artisan key:generate
     ```
 
-6. Modify the `.env` file with your desired local environment configuration options. After the database has been created, set your environment variable to point to this database by placing the absolute path to the database in the `DB_DATABASE` environment variable:
+8. Modify the `.env` file with your desired local environment configuration options. After the database has been created, set your environment variable to point to this database by placing the absolute path to the database in the `DB_DATABASE` environment variable:
 
     ```
     DB_CONNECTION=sqlite
     DB_DATABASE=/absolute/path/to/database.sqlite
     ```
 
-7. Create your database tables (this will run the migrations located in `/discography/database/migrations/`):
+9. Create your database tables (this will run the migrations located in `/discography/database/migrations/`):
 
     ```
     php artisan migrate
     ```
 
-7. Populate your database tables (this will populate your tables with fake data coming form `/discography/database/seeds`):
+10. Populate your database tables (this will populate your tables with fake data coming form `/discography/database/seeds`):
 
     ````
     php artisan db:seed
     ````
 
-8. Run composer:
+11. Run the following command:
 
-    ````
-    composer install
-    ````
+    ```
+    npm run build
+    ```
 
-9. Run your server:
+12. Run your server:
 
    ````
    php artisan serve
    ````
+
+13. Open your browser and go to `http://127.0.0.1:8000`
 
 ## Testing
 
@@ -104,7 +118,7 @@ In the tests directory, you will find the tests to verify the application.
 2. Create the `.env.testing` file by copying from the example provided (`.env`):
 
     ```
-    cp .env .env.testing.
+    cp .env .env.testing
     ```
 
 3. Modify the `.env.testing` file with your desired local environment configuration options. After the testing database has been created, set your environment variables to point to this testing database by placing the absolute path to the database in the `DB_DATABASE` environment variable:

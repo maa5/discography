@@ -3,8 +3,9 @@
 @section('title', $artist->name)
 
 @section('content')
+    <a class="link-back" href="{{ route('artists.index') }}"><i class="fas fa-chevron-left"></i> Back to Artists</a>
+
     <div class='container-artist'>
-        <a href="{{ route('artists.index') }}"><i class="fas fa-chevron-left"></i> Back to Artists</a>
         <div class='head-artist'>
             <h2>Artist: {{ $artist->name }}</h2>
             <div>
